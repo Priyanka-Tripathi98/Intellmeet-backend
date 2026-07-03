@@ -25,7 +25,7 @@ const PORT = 3001;
 
 // CORS Middleware Configuration
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://intellmeet-frontend-hupsiw1ra-priyanka-tripathis-projects.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
@@ -233,7 +233,7 @@ app.get("/api/meeting-notes/:roomId", async (req, res) => {
 const server = http.createServer(app);
 const socketio = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://intellmeet-frontend-hupsiw1ra-priyanka-tripathis-projects.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
