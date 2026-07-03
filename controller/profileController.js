@@ -19,11 +19,8 @@ exports.updateProfile = async (req, res) => {
     // 3. File validation check
     // If the user attached a new file image, process and build an absolute web address string
     if (req.file) {
-      // req.file.filename comes natively from Multer middleware (e.g. "image-1719398000.jpg")
-      const absoluteImageUrl = `http://localhost:3001/uploads/${req.file.filename}`;
-      
-      updateData.profilePic = absoluteImageUrl;
-      console.log("💾 Generated URL saved to MongoDB:", absoluteImageUrl);
+     updateData.profilePic = req.file.path;
+     console.log("💾 Generated URL saved to MongoDB:", req.file.path);
     }
 
     // 4. Update the document in MongoDB
