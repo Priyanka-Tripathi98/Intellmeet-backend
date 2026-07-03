@@ -25,12 +25,14 @@ const PORT = 3001;
 
 // CORS Middleware Configuration
 app.use(cors({
-  origin: "https://intellmeet-frontend-hupsiw1ra-priyanka-tripathis-projects.vercel.app",
+  origin: [
+    "https://intellmeet-frontend-phi.vercel.app",
+    "https://intellmeet-frontend-hupsiw1ra-priyanka-tripathis-projects.vercel.app"
+  ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
 app.use(express.json());
 connectDB();
 mongoose.set('debug', true);
@@ -233,12 +235,14 @@ app.get("/api/meeting-notes/:roomId", async (req, res) => {
 const server = http.createServer(app);
 const socketio = new Server(server, {
   cors: {
-    origin: "https://intellmeet-frontend-hupsiw1ra-priyanka-tripathis-projects.vercel.app",
+    origin: [
+      "https://intellmeet-frontend-phi.vercel.app",
+      "https://intellmeet-frontend-hupsiw1ra-priyanka-tripathis-projects.vercel.app"
+    ],
     methods: ["GET", "POST"],
     credentials: true,
   },
 });
-
 // REDIS SETUP
 const redisUrl = process.env.REDIS_URL || "redis://localhost:6379";
 
