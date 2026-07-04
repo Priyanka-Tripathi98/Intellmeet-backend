@@ -21,7 +21,7 @@ const meetingRoutes = require("./routes/meetingRoutes.js");
 const connectDB = require("./config/db.js");
 const Meeting = require("./models/meetingModel"); 
 
-const PORT = 3001;
+const PORT = 8001;
 
 // CORS Middleware Configuration
 app.use(cors({
